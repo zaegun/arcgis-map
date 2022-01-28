@@ -1,18 +1,18 @@
 // This script will create a map using the ArcGIS API for Javascript
-require(["esri/config", "esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], 
+require(["esri/config", "esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer", "esri/rest/locator", "esri/Graphic"], 
     function(esriConfig,Map, MapView, FeatureLayer) {
     esriConfig.apiKey = "AAPKd69beb4d23094a7da5fbb6c1e847fa5a2yt4TvaDdFV0H1w8jtfAEC1jtWFTJ3-5vx7xUZFGYOVtmqEopmuXi8cSopWSMIpq";
     
     // Starts the process by creating a base layer map
     const map = new Map({
-        basemap: "arcgis-topographic" // Basemap layer
+        basemap: "arcgis-navigation" // Basemap layer
     });
 
     // This centers the view on Tokyo
     const view = new MapView({
         map: map,
         center: [139.7513889,35.685], //Longitude, latitude
-        zoom: 13,
+        zoom: 11,
         container: "viewDiv"
     });
 
@@ -50,7 +50,7 @@ require(["esri/config", "esri/Map", "esri/views/MapView", "esri/layers/FeatureLa
     }
 
     // Creates the feature layer from the list of Tokyo sites, adds the point images, and adds the labels
-    const layer = new FeatureLayer({
+    const POILayer = new FeatureLayer({
         url: "https://services7.arcgis.com/KfQDjNd8OLAPMwvx/arcgis/rest/services/tokyo_locations/FeatureServer/0",
         renderer: pointOfInterestIcon,
         labelingInfo: [pointOfInterestLabels],
@@ -58,8 +58,7 @@ require(["esri/config", "esri/Map", "esri/views/MapView", "esri/layers/FeatureLa
             popupTemplate: popUpPointOfInterest
     });
 
-    // Add the feature layer
-    map.add(layer);
-
+    // Add the feature layer for points of interest
+    map.add(POILayer);
 
     });  
