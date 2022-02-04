@@ -6,7 +6,7 @@ The initial release will focus on locations around Tokyo. The map will be popula
 
 The software is easy to use. It will automatically show a map of Tokyo and locations. Click on the location you want to know more about and a pop up will display. 
 
-[Demo Video](http://youtube.link.goes.here)
+[Video Demonstration](https://youtu.be/83UkIKmKATY)
 
 # Development Environment
 
@@ -20,6 +20,7 @@ The software is easy to use. It will automatically show a map of Tokyo and locat
 
 # Future Work
 
+* Inline the JavaScript and CSS to make it easier for less tech savy individuals to use this
 * Add list for easy navigation between points
 * Search bar
 * Categories for locations that can be filtered
