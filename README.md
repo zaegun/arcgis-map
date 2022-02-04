@@ -20,7 +20,6 @@ The software is easy to use. It will automatically show a map of Tokyo and locat
 
 # Future Work
 
-
 * Add list for easy navigation between points
 * Search bar
 * Categories for locations that can be filtered
